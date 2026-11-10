@@ -1,5 +1,7 @@
 # Jason Liu (jal134@ucsd.edu)
 
+<hr>
+
 ### Section D20 - Baby Language Models and Cognitive Modeling
 
 ### Mentor: Alex Warstadt
@@ -10,7 +12,7 @@
 
 **1. What is the most interesting topic covered in your domain this quarter?**
 
-The most interesting topic that was covered was the...
+The most interesting topic that was covered was introduction of the BLiMP dataset. The BLiMP dataset, or the Benchmark of Linguistic Minimal Pairs, is a fundamental benchmark that we'll be using in our evaluations of our BabyLM models for this project. Previously, when dealing with NLP tasks or Language Models, I typically "evaluate" simply through accuracy and through reading generated text. However, I rarely stop to consider how the LLM is actually able to learn the proper way of outputting english; the grammar, syntax, word choice, and tone are all important when it comes to actual performance. The BLiMP dataset helped me realize this, and it also presented many different ways of evaluating linguistic models that I've never really worked with before. Island Effects, a major component of BLiMP, stands out to me the most. It's a metric used to see if an language model is capable of discerning between a proper sentence and one with and island violation (when a word is moved outside of a "syntactic island", resulting in a sentence that sounds like broken English). Ideas like these are interesting to me because it tells me that in addition to just finding new ways of creating models, we should also turn a lot of attention to evaluating them as well. Being able to evaluate models well can be just as important or even more important than improving existing ones, since knowing exactly where our models are falling short can give us more insight into how we can improve them.
 
 <br>
 
@@ -28,4 +30,4 @@ A potential change I'd make to the current Quarter 1 Project is to work backward
 
 **4. What other techniques would you be interested in using in your project?**
 
-Some other techniques that I'd be interested in using are PEFT, Boosting, and Distillation.
+Some other techniques that I'd be interested in using are PEFT, Boosting, and Distillation. PEFT is an way that we can test different model configurations and adjustments, as well as test for improvements in our models without needing excessive retraining. One way we could apply this technique is to train a language or audio-based model on our baseline data taken from BabyLM, and use PEFT to freeze the model weights. We can then apply LoRA and add additional encoded features to further training steps, such as prosodic features, which will allow us to evaluate the fine-tuned model against other checkpoints or other models with different adjustments. This gives us a more simple way of conducting experiments to determine what features or specific training architectures are more effective at training our models. Boosting is another technique that was brought up in our discussions, and it's a technique that is intended to improve models by focusing more weight into challenging or misclassified examples so the model can learn from where it goes wrong. For our overall research, we can potentially identify some points of failure for our trained models and place more emphasis on specific linguistic patterns to help improve our model. This idea is interesting because Boosting is a topic that I've looked at before, but have not really delved too deep in. It also serves as an interesting tie-in to human learning, since humans often study for exams by practicing and focusing on mistakes as well, so this technique could yield some interesting findings that can be useful for a more cognitive-based research project. Distillation is another topic that recently came up, where a student model learns from a larger teacher model. The goal is to take a teacher model and try and tune a smaller, student model to retain as much of the teacher model's learned patterns and knowledge as possible while simulatneously using more efficient weights and features to reduce the model's size. This aligns with the BabyLM challenge well, since the whole purpose of the project is to try and train smaller models with increased efficiency. It's a topic that came up after I looked into Reinforcement Learning, and it stood out to me as a somewhat related concept that utilizes additional external input aside from just the raw training data alone.
