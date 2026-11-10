@@ -7,6 +7,7 @@
 ### TA: Nate Sheibley
 
 ---
+<hr>
 
 **1. What is the most interesting topic covered in your domain this quarter?**
 
